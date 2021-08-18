@@ -303,6 +303,7 @@ $query = mysqli_query($con, $sql);
 
   <footer>
     <div class="container">
+      <hr>
       <div class="row">
         <div class="col-lg-12">
           <p>Copyright © 2021 Tapias PPI, Ltd. All Rights Reserved. 

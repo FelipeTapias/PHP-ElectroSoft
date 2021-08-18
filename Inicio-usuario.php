@@ -1,28 +1,27 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
+<head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
-    <title>Electro recicla</title>
+  <title>Electro recicla</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
 
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="assets/css/fontawesome.css">
-    <link rel="stylesheet" href="assets/css/templatemo-seo-dream.css">
-    <link rel="stylesheet" href="assets/css/animated.css">
-    <link rel="stylesheet" href="assets/css/owl.css">
-<!--
+  <!-- Additional CSS Files -->
+  <link rel="stylesheet" href="assets/css/fontawesome.css">
+  <link rel="stylesheet" href="assets/css/templatemo-seo-dream.css">
+  <link rel="stylesheet" href="assets/css/animated.css">
+  <link rel="stylesheet" href="assets/css/owl.css">
+  <!--
 
 TemplateMo 563 SEO Dream
 
@@ -33,6 +32,17 @@ https://templatemo.com/tm-563-seo-dream
 </head>
 
 <body>
+
+<?php 
+
+//Es muy raro pero parece el common.js
+include("./DB/connection.php");
+$con = conectar();
+
+$sql = "SELECT * FROM producto";
+$query = mysqli_query($con, $sql);
+
+?>
 
   <!-- ***** Preloader Start ***** -->
   <div id="js-preloader" class="js-preloader">
@@ -60,12 +70,14 @@ https://templatemo.com/tm-563-seo-dream
             <!-- ***** Logo End ***** -->
             <!-- ***** Menu Start ***** -->
             <ul class="nav">
-              <li class="scroll-to-section"><a href="#top" class="active">Agregar producto</a></li>
-              <li class="scroll-to-section"><a href="#portfolio">Ver mis productos</a></li>
-              <li class="scroll-to-section"><div class="main-blue-button"><a href="index.php">Cerrar sesión</a></div></li> 
-            </ul>        
+              <li class="scroll-to-section"><a href="#contact" class="active">Agregar producto</a></li>
+              <li class="scroll-to-section"><a href="#features">Ver mis productos</a></li>
+              <li class="scroll-to-section">
+                <div class="main-blue-button"><a href="index.php">Cerrar sesión</a></div>
+              </li>
+            </ul>
             <a class='menu-trigger'>
-                <span>Menu</span>
+              <span>Menu</span>
             </a>
             <!-- ***** Menu End ***** -->
           </nav>
@@ -105,63 +117,6 @@ https://templatemo.com/tm-563-seo-dream
     </div>
   </div>
 
-  <div id="features" class="features section">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="features-content">
-            <div class="row">
-              <div class="col-lg-3">
-                <div class="features-item first-feature wow fadeInUp" data-wow-duration="1s" data-wow-delay="0s">
-                  <div class="first-number number">
-                    <h6>01</h6>
-                  </div>
-                  <div class="icon"></div>
-                  <h4>Reach Out</h4>
-                  <div class="line-dec"></div>
-                  <p>This HTML5 template is based on Bootstrap 5 CSS. You are free to customize anything.</p>
-                </div>
-              </div>
-              <div class="col-lg-3">
-                <div class="features-item second-feature wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s">
-                  <div class="second-number number">
-                    <h6>02</h6>
-                  </div>
-                  <div class="icon"></div>
-                  <h4>Develop a Strategy</h4>
-                  <div class="line-dec"></div>
-                  <p>Lorem ipsum dolor sit ameter consectetur adipiscing li elit sed do eiusmod.</p>
-                </div>
-              </div>
-              <div class="col-lg-3">
-                <div class="features-item first-feature wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.4s">
-                  <div class="third-number number">
-                    <h6>03</h6>
-                  </div>
-                  <div class="icon"></div>
-                  <h4>Implementation</h4>
-                  <div class="line-dec"></div>
-                  <p>If this template is useful for your website, please consider to <a rel="nofollow" href="https://www.paypal.me/templatemo" target="_blank">support us</a> a little.</p>
-                </div>
-              </div>
-              <div class="col-lg-3">
-                <div class="features-item second-feature last-features-item wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s">
-                  <div class="fourth-number number">
-                    <h6>04</h6>
-                  </div>
-                  <div class="icon"></div>
-                  <h4>Analyze the result</h4>
-                  <div class="line-dec"></div>
-                  <p>Below circular progress bar animation supports those CSS values 10, 20, 30, till 100.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <div id="contact" class="contact-us section">
     <div class="container">
       <div class="row">
@@ -174,29 +129,29 @@ https://templatemo.com/tm-563-seo-dream
                 </div>
               </div>
               <div class="col-lg-12">
-                  <div class="row">
-                    <div class="col-lg-6">
-                      <fieldset>
-                        <input type="name" name="name" id="name" placeholder="Nombre" autocomplete="off" required>
-                      </fieldset>
-                    </div>
-                    <div class="col-lg-6">
-                      <fieldset>
-                        <input type="surname" name="type" id="surname" placeholder="Tipo" autocomplete="off" required>
-                      </fieldset>
-                    </div>
-                    <div class="col-lg-12">
-                      <fieldset>
-                        <!-- <input type="text" name="description" id="password" placeholder="Descripción" autocomplete="off" style="height:100px;"> -->
-                        <textarea name="description" placeholder="Descripción" id="mytext" cols="30" rows="10" style="border: 2px solid black;"></textarea>
-                      </fieldset>
-                    </div>
-                    <div class="col-lg-12">
-                      <fieldset>
-                        <input type="submit" id="form-submit" class="main-button" value="Registrar">
-                      </fieldset>
-                    </div>
+                <div class="row">
+                  <div class="col-lg-6">
+                    <fieldset>
+                      <input type="name" name="name" id="name" placeholder="Nombre" autocomplete="off" required>
+                    </fieldset>
                   </div>
+                  <div class="col-lg-6">
+                    <fieldset>
+                      <input type="surname" name="type" id="surname" placeholder="Tipo" autocomplete="off" required>
+                    </fieldset>
+                  </div>
+                  <div class="col-lg-12">
+                    <fieldset>
+                      <!-- <input type="text" name="description" id="password" placeholder="Descripción" autocomplete="off" style="height:100px;"> -->
+                      <textarea name="description" placeholder="Descripción" id="mytext" cols="30" rows="10" style="border: 2px solid black;"></textarea>
+                    </fieldset>
+                  </div>
+                  <div class="col-lg-12">
+                    <fieldset>
+                      <input type="submit" id="form-submit" class="main-button" value="Registrar">
+                    </fieldset>
+                  </div>
+                </div>
               </div>
             </div>
           </form>
@@ -205,11 +160,53 @@ https://templatemo.com/tm-563-seo-dream
     </div>
   </div>
 
-  <footer>
+  <div id="features" class="features section">
     <div class="container">
       <div class="row">
+        <div class="alert alert-success" role="alert">
+          <h4 class="alert-heading">Lista de tus productos registrados!</h4>
+          <p>En la siguiente tabla están tus productos registrados, además, puedes ver toda la información relacionada.</p>
+          <hr>
+          <p class="mb-0">Recuerda que puedes administrar cada uno de ellos.</p>
+        </div>
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Tipo</th>
+              <th scope="col">Descripción</th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php while($filas = mysqli_fetch_assoc($query)) {
+
+            ?>
+            <tr>
+              <th scope="row"><?php echo $filas['idProducto'] ?></th>
+              <td><?php echo $filas['nombre'] ?></td>
+              <td><?php echo $filas['tipo'] ?></td>
+              <td><?php echo $filas['descripcion'] ?></td>
+              <td>
+                <a href="./producto/edit.php?id=<?php echo $filas['idProducto'] ?>"><i class="fas fa-edit fa-lg"></i></a>
+                <a href="./producto/deleteProducto.php?id=<?php echo $filas['idProducto'] ?>"><i class="fas fa-trash fa-lg"></i></a>
+              </td>
+            </tr>
+            <?php } ?>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  
+  <footer>
+    <div class="container">
+      <hr>
+      <div class="row">
         <div class="col-lg-12">
-          <p>Copyright © 2021 Tapias PPI, Ltd. All Rights Reserved. 
+          <p>Copyright © 2021 Tapias PPI, Ltd. All Rights Reserved.
         </div>
       </div>
     </div>
@@ -218,10 +215,13 @@ https://templatemo.com/tm-563-seo-dream
   <!-- Scripts -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
   <script src="assets/js/owl-carousel.js"></script>
   <script src="assets/js/animation.js"></script>
   <script src="assets/js/imagesloaded.js"></script>
   <script src="assets/js/custom.js"></script>
 
 </body>
+
 </html>
