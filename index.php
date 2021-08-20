@@ -74,10 +74,7 @@ $query = mysqli_query($con, $sql);
               <li class="scroll-to-section"><a href="#top" class="active">Inicio</a></li>
               <li class="scroll-to-section"><a href="#portfolio">Ver productos</a></li>
               <li class="scroll-to-section"><div class="main-blue-button"><a href="#contact">Iniciar sesión</a></div></li> 
-            </ul>        
-            <a class='menu-trigger'>
-                <span>Menu</span>
-            </a>
+            </ul>  
             <!-- ***** Menu End ***** -->
           </nav>
         </div>
@@ -99,7 +96,7 @@ $query = mysqli_query($con, $sql);
                   </div>
                   <div class="col-lg-12">
                     <div class="main-green-button scroll-to-section">
-                      <a href="#contact">Registrarme</a>
+                      <a href="#register">Registrarme</a>
                     </div>
                   </div>
                 </div>
@@ -148,44 +145,6 @@ $query = mysqli_query($con, $sql);
       </div>
     </div>
   </div>
-
-  <div>
-        <table>
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>NOMBRE</th>
-                    <th>APELLIDO</th>
-                    <th>CORREO</th>
-                    <th>TELEFONO</th>
-                    <th>USUARIO</th>
-                    <th>CONTRASEÑA</th>
-                    <th>ACCIONES</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php while($filas = mysqli_fetch_assoc($query)) {
-
-                ?>
-                <tr>
-                    <td><?php echo $filas['idUsuario'] ?></td>
-                    <td><?php echo $filas['nombre'] ?></td>
-                    <td><?php echo $filas['apellido'] ?></td>
-                    <td><?php echo $filas['correo'] ?></td>
-                    <td><?php echo $filas['telefono'] ?></td>
-                    <td><?php echo $filas['usuario'] ?></td>
-                    <td><?php echo $filas['clave'] ?></td>
-                    <td>
-                        <button><a href="./usuario/edit.php?id=<?php echo $filas['idUsuario'] ?>">Editar</a></button>
-                    </td>
-                    <td>
-                    <button><a href="./usuario/delete.php?id=<?php echo $filas['idUsuario'] ?>">Eliminar</a></button>
-                    </td>
-                </tr>
-                <?php } ?>
-            </tbody>
-        </table>
-    </div>
 
   <div id="features" class="features section">
     <div class="container">
@@ -244,7 +203,7 @@ $query = mysqli_query($con, $sql);
     </div>
   </div>
 
-  <div id="contact" class="contact-us section">
+  <div id="register" class="contact-us section">
     <div class="container">
       <div class="row">
         <div class="col-lg-12 wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.25s">

@@ -190,7 +190,7 @@ $query = mysqli_query($con, $sql);
               <td><?php echo $filas['tipo'] ?></td>
               <td><?php echo $filas['descripcion'] ?></td>
               <td>
-                <a href="./producto/edit.php?id=<?php echo $filas['idProducto'] ?>"><i class="fas fa-edit fa-lg"></i></a>
+                <a href="./producto/editProducto.php?id=<?php echo $filas['idProducto'] ?>"><i class="fas fa-edit fa-lg"></i></a>
                 <a href="./producto/deleteProducto.php?id=<?php echo $filas['idProducto'] ?>"><i class="fas fa-trash fa-lg"></i></a>
               </td>
             </tr>

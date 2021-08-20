@@ -11,6 +11,7 @@
 
     if($query) {
         Header("Location: ../inicio-usuario.php");
+        // Header("Refresh: 0");
     }
     }
 ?>
