@@ -1,18 +1,16 @@
 <?php
 
-include("../DB/connection.php");
-$con = conectar();
+    include("../DB/connection.php");
+    $con = conectar();
 
-$id = (!empty($_GET['id'])) ? $_GET['id'] : NULL;
+    $id = (!empty($_GET['id'])) ? $_GET['id'] : NULL;
 
-if ($id) {
-    $sql = " FROM producto WHERE idProducto = '$id'";
-    $query = mysqli_query($con, $sql);
+    if ($id) {
 
-    if ($query) {
-        Header("Location: ../inicio-usuario.php");
+        $sql = "SELECT * FROM producto WHERE idProducto = '$id'";
+        $query = mysqli_query($con, $sql);
+        $filas = mysqli_fetch_assoc($query);
     }
-}
 ?>
 
 <!DOCTYPE html>
@@ -71,13 +69,13 @@ https://templatemo.com/tm-563-seo-dream
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
                         <a href="index.html" class="logo">
-                            <h4>ElectroRecicla<img src="assets/images/logo-icon.png" alt=""></h4>
+                            <h4>ElectroRecicla<img src="../assets/images/logo-icon.png" alt=""></h4>
                         </a>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
                             <li class="scroll-to-section">
-                                <div class="main-blue-button"><a href="index.php">Volver</a></div>
+                                <div class="main-blue-button"><a href="../Inicio-usuario.php">Volver</a></div>
                             </li>
                         </ul>
                         <a class='menu-trigger'>
@@ -90,31 +88,6 @@ https://templatemo.com/tm-563-seo-dream
         </div>
     </header>
     <!-- ***** Header Area End ***** -->
-
-    <div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="row">
-                        <div class="col-lg-6 align-self-center">
-                            <div class="left-content header-text wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                        <h2>Editando Producto</h2>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="right-image wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
-                                <img src="assets/images/banner-right-image.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <div id="contact" class="contact-us section">
         <div class="container">
@@ -131,18 +104,17 @@ https://templatemo.com/tm-563-seo-dream
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <fieldset>
-                                            <input type="name" name="name" id="name" placeholder="Nombre" autocomplete="off" required>
+                                            <input type="name" name="name" id="name" placeholder="Nombre" autocomplete="off" value="<?php echo $filas['nombre']?>" required>
                                         </fieldset>
                                     </div>
                                     <div class="col-lg-6">
                                         <fieldset>
-                                            <input type="surname" name="type" id="surname" placeholder="Tipo" autocomplete="off" required>
+                                            <input type="surname" name="type" id="surname" placeholder="Tipo" autocomplete="off" value="<?php echo $filas['tipo']?>" required>
                                         </fieldset>
                                     </div>
                                     <div class="col-lg-12">
                                         <fieldset>
-                                            <!-- <input type="text" name="description" id="password" placeholder="Descripción" autocomplete="off" style="height:100px;"> -->
-                                            <textarea name="description" placeholder="Descripción" id="mytext" cols="30" rows="10" style="border: 2px solid black;"></textarea>
+                                            <textarea name="description" placeholder="Descripción" id="mytext" cols="30" rows="10" style="border: 2px solid black;" required><?php echo $filas['descripcion']?></textarea>
                                         </fieldset>
                                     </div>
                                     <div class="col-lg-12">
