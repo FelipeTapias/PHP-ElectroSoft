@@ -10,8 +10,7 @@
     $query = mysqli_query($con, $sql);
 
     if($query) {
-        Header("Location: ../inicio-usuario.php");
-        // Header("Refresh: 0");
+        Header("Location: ../Inicio-usuario.php");
     }
     }
 ?>

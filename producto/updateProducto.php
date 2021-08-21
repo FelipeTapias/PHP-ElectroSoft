@@ -9,18 +9,9 @@
     $produtcDescription = $_POST['description'];
     $sql = "UPDATE producto SET nombre='$productName', tipo='$productType', descripcion='$produtcDescription'
                     WHERE idProducto = '$productId'";
-
-    function consoleLog($text) {
-        echo '<script type="text/javascript">' .
-        'alert(' . $text . ');
-        window.location.href="../index.php";</script>';
+    
+    $query = mysqli_query($con, $sql);
+    if($query) {
         Header("Location: ../Inicio-usuario.php");
     }
-
-
-
-        $query = mysqli_query($con, $sql);
-        if($query) {
-            consoleLog($text);
-        }
 ?>

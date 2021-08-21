@@ -35,12 +35,14 @@ https://templatemo.com/tm-563-seo-dream
 
 <?php 
 
-//Es muy raro pero parece el common.js
-include("./DB/connection.php");
-$con = conectar();
+  //Es muy raro pero parece el common.js
+  include("./DB/connection.php");
+  $con = conectar();
 
-$sql = "SELECT * FROM producto";
-$query = mysqli_query($con, $sql);
+  $id = (!empty ($_GET['id']) ) ? $_GET['id'] : NULL; 
+
+  $sql = "SELECT * FROM producto";
+  $query = mysqli_query($con, $sql);
 
 ?>
 
@@ -72,6 +74,7 @@ $query = mysqli_query($con, $sql);
             <ul class="nav">
               <li class="scroll-to-section"><a href="#contact" class="active">Agregar producto</a></li>
               <li class="scroll-to-section"><a href="#features">Ver mis productos</a></li>
+              <li class="scroll-to-section"><a href="./usuario/editUser.php?id=<?php echo $id ?>">Editar perfil</a></li>
               <li class="scroll-to-section">
                 <div class="main-blue-button"><a href="index.php">Cerrar sesión</a></div>
               </li>
