@@ -14,7 +14,7 @@ Para el desarrollo de este proyecto es importante tener en cuenta las siguientes
 * **CSS:** Lenguaje utilizado para brindar estetica a la web
 * **JavaScript:** Lenguaje de programación utilizado.
 * **PHP:** Lenguaje de programación utilizado como puente entre la base de datos y la web.
-* **MySQL:** 
+* **MySQL:** Sistema de gestión de bases de datos relacional.
 
 ### Estructura del proyecto
 
