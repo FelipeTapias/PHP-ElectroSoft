@@ -93,7 +93,7 @@ https://templatemo.com/tm-563-seo-dream
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.25s">
-                    <form id="contact" action="producto/addProducto.php" method="POST">
+                    <form id="contact" action="updateProducto.php" method="POST">
                         <div class="row">
                             <div class="col-lg-6 offset-lg-3">
                                 <div class="section-heading">
@@ -102,6 +102,7 @@ https://templatemo.com/tm-563-seo-dream
                             </div>
                             <div class="col-lg-12">
                                 <div class="row">
+                                            <input type="hidden" name="productoId" id="productoId"value="<?php echo $filas['idProducto']?>">
                                     <div class="col-lg-6">
                                         <fieldset>
                                             <input type="name" name="name" id="name" placeholder="Nombre" autocomplete="off" value="<?php echo $filas['nombre']?>" required>
